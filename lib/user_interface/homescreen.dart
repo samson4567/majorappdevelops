@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:majorappdevelops/user_interface/SignUp.dart';
 
@@ -9,10 +7,11 @@ class Home_screen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff33907C),
-        body: ListView(children: [
+      backgroundColor: Color(0xff33907C),
+      body: ListView(
+        children: [
           const Padding(
-            padding: const EdgeInsets.only(top: 120, bottom: 66),
+            padding: EdgeInsets.only(top: 120, bottom: 66),
             child: Center(
                 child: Text(
               "Welcome to tradly",
@@ -101,27 +100,32 @@ class Home_screen2 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            const  Text(
+              Text(
                 'Dont have an account ?',
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: Colors.white),
               ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const SignUp())));
+                },
+                child: const Text(
+                  "sign up",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white),
+                ),
+              ),
             ],
           ),
-          TextButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => const SignUp())));
-              },
-              child: Text(
-                "sign up",
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white),
-              ))
-        ]));
+        ],
+      ),
+    );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:majorappdevelops/user_interface/sendotp.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
-
   @override
   State<SignUp> createState() => _SignUpState();
 }
@@ -112,26 +112,32 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10, right: 30, left: 30, bottom: 30),
-            child: Container(
-              width: double.maxFinite,
-              height: 48,
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(18.0))),
-              child: const Center(
-                  child: Text(
-                'Create',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              )),
+            padding:
+                const EdgeInsets.only(top: 10, right: 30, left: 30, bottom: 30),
+            child: InkWell(
+              onTap: () {
+                
+              },
+              child: Container(
+                width: double.maxFinite,
+                height: 48,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(18.0))),
+                child: const Center(
+                    child: Text(
+                  'Create',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                )),
+              ),
             ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             const  Text(
+              const Text(
                 'Have an account?',
                 style: TextStyle(
                     fontSize: 18,
@@ -143,7 +149,7 @@ class _SignUpState extends State<SignUp> {
           TextButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => const SignUp())));
+                    MaterialPageRoute(builder: ((context) => const SendOtp())));
               },
               child: Text(
                 "sign in",
