@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:majorappdevelops/user_interface/SignUp.dart';
+import 'package:majorappdevelops/user_interface/groceries.dart';
 
 class Home_screen2 extends StatelessWidget {
   const Home_screen2({super.key});
@@ -59,7 +60,12 @@ class Home_screen2 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 32, right: 32, bottom: 33),
             child: InkWell(
-              onTap: (() {}),
+              onTap: (() {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const Groceries())));
+              }),
               child: Padding(
                 padding: const EdgeInsets.only(left: 40),
                 child: Center(
